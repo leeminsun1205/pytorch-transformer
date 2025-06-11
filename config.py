@@ -3,13 +3,13 @@ from pathlib import Path
 def get_config():
     return {
         "batch_size": 8,
-        "num_epochs": 20,
+        "num_epochs": 10,
         "lr": 10**-4,
-        "seq_len": 350,
+        "seq_len": 100,
         "d_model": 512,
-        "datasource": 'opus_books',
-        "lang_src": "en",
-        "lang_tgt": "it",
+        "datasource": 'harouzie/vi_en-translation',
+        "lang_src": "English",
+        "lang_tgt": "Vietnamese",
         "model_folder": "weights",
         "model_basename": "tmodel_",
         "preload": "latest",
@@ -25,7 +25,7 @@ def get_weights_file_path(config, epoch: str):
 # Find the latest weights file in the weights folder
 def latest_weights_file_path(config):
     model_folder = f"{config['datasource']}_{config['model_folder']}"
-    model_filename = f"{config['model_basename']}*"
+    model_filename = f"{config['model_basename']}*.pt"
     weights_files = list(Path(model_folder).glob(model_filename))
     if len(weights_files) == 0:
         return None
