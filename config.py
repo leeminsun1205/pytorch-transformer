@@ -7,7 +7,7 @@ def get_config():
         "lr": 10**-4,
         "seq_len": 100,
         "d_model": 512,
-        "root_path": "/kaggle/input/bt4-22520195/pytorch-transformer",
+        "root_path": "/kaggle/input/model/pytorch-transformer",
         "datasource": 'harouzie/vi_en-translation',
         "lang_src": "English",
         "lang_tgt": "Vietnamese",
